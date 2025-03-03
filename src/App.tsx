@@ -358,9 +358,9 @@ function App() {
               <h3 className="text-xl font-semibold mb-6 text-neon-blue">Tecnologias</h3>
               <div className="flex flex-wrap gap-3">
                 {[
-                  'JavaScript', 'TypeScript', 'React', 'Node.js', 'Next.js', 
-                  'Python', 'Power BI', 'GraphQL', 'MongoDB', 'PostgreSQL', 
-                  'Docker', 'AWS', 'Redux', 'TailwindCSS', 'Git'
+                  'JavaScript', 'TypeScript', "Java", 'React', 'Node.js', 'Next.js', 
+                  'Python', 'Power BI', "Looker", 'GraphQL', 'MongoDB', "IDE Eclipse", 'PostgreSQL', 
+                  'Docker', 'AWS', 'Cloud', 'TailwindCSS', 'Git'
                 ].map((skill) => (
                   <span key={skill} className="skill-tag bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md text-sm transition-all hover:bg-neon-blue/20">
                     {skill}
