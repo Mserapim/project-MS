@@ -618,7 +618,7 @@ function App() {
                   <div className="bg-neon-blue/10 p-3 rounded-lg group-hover:bg-neon-blue/20 transition-colors">
                     <Github size={20} className="text-neon-blue" />
                   </div>
-                  <span>github.com/marcosseraphim</span>
+                  <span>github.com/marcoseraphim</span>
                 </a>
                 {/* Link para CV */}
                 <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-neon-blue transition-colors group">
