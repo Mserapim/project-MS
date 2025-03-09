@@ -153,7 +153,7 @@ function App() {
                 <iframe 
                   width="100%" 
                   height="315" 
-                  src="https://www.youtube.com/embed/q1qKv5TBaOA?autoplay=1&mute=1&loop=1&playlist=q1qKv5TBaOA&controls=0&showinfo=0" 
+                  src="https://www.youtube.com/embed/8NwCJjyCMew?autoplay=1&mute=1&loop=1&playlist=8NwCJjyCMew&controls=0&showinfo=0" 
                   title="Digital Technology Video" 
                   frameBorder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -186,17 +186,17 @@ function App() {
             <div className="col-span-2">
               {/* Parágrafos com efeito de fade-in ao rolar */}
               <p className="text-gray-300 mb-4 leading-relaxed fade-in-section opacity-0 translate-y-10 transition-all duration-700">
-                Olá! Sou Marcos Seraphim, um desenvolvedor de software e analista de dados com paixão por criar soluções tecnológicas 
+                Sou Marcos Seraphim, um desenvolvedor de software e analista de dados com paixão por criar soluções tecnológicas 
                 que transformam dados em insights valiosos e resolvem problemas reais. Com experiência em desenvolvimento web e análise de dados, 
                 estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.
               </p>
               <p className="text-gray-300 mb-4 leading-relaxed fade-in-section opacity-0 translate-y-10 transition-all duration-700 delay-100">
-                Minha jornada na área de tecnologia começou há 8 anos, e desde então tenho trabalhado 
+                Minha jornada na área de tecnologia começou há 12 anos, e desde então tenho trabalhado 
                 em diversos projetos que me permitiram desenvolver um conjunto diversificado de habilidades 
                 técnicas e analíticas. Especializo-me em arquiteturas modernas, análise de dados e visualizações interativas.
               </p>
               <p className="text-gray-300 leading-relaxed fade-in-section opacity-0 translate-y-10 transition-all duration-700 delay-200">
-                Quando não estou codificando ou analisando dados, gosto de explorar novas tecnologias, jogar videogames e praticar esportes. 
+                Quando não estou codificando ou analisando dados, gosto de explorar novas tecnologias, esta com a familía, jogar videogames e praticar esportes. 
                 Acredito que um bom equilíbrio entre vida profissional e pessoal é essencial 
                 para manter a criatividade e a produtividade.
               </p>
@@ -265,10 +265,10 @@ function App() {
                   <h3 className="text-xl font-semibold text-neon-blue">Desenvolvedor Full Stack & Analista de Dados</h3>
                   <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2020 - Presente</span>
                 </div>
-                <h4 className="text-lg text-gray-300 mb-3">TechFusion Solutions</h4>
+                <h4 className="text-lg text-gray-300 mb-3">CCT/ A SERVIÇO DA PETROBRAS S/A </h4>
                 <p className="text-gray-400 leading-relaxed">
                   Liderança no desenvolvimento de aplicações web de alta performance utilizando React, Node.js e MongoDB.
-                  Implementação de análises de dados e dashboards com Python e Power BI para tomada de decisões.
+                  Implementação de análises de dados e dashboards com Java, Python e Power BI para tomada de decisões.
                   Criação de modelos preditivos e ETL para processamento de grandes volumes de dados.
                   Mentoria de desenvolvedores juniores e implementação de práticas de DevOps.
                 </p>
@@ -291,7 +291,7 @@ function App() {
                   <h3 className="text-xl font-semibold text-neon-blue">Analista de Dados & Desenvolvedor Front-end</h3>
                   <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2018 - 2020</span>
                 </div>
-                <h4 className="text-lg text-gray-300 mb-3">DigitalEdge Innovations</h4>
+                <h4 className="text-lg text-gray-300 mb-3">SOLUTIC/ A SERVIÇO DA PETROBRAS </h4>
                 <p className="text-gray-400 leading-relaxed">
                   Desenvolvimento de interfaces responsivas e acessíveis utilizando React e TypeScript.
                   Análise de dados de usuários para otimização de experiência e conversão.
@@ -318,10 +318,10 @@ function App() {
               <div className="timeline-dot"></div>
               <div className="glass-effect rounded-lg p-6 cyber-border">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-semibold text-neon-blue">Mestrado em Ciência da Computação</h3>
+                  <h3 className="text-xl font-semibold text-neon-blue">Pós-graduação em Arquitetura de Software</h3>
                   <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2018 - 2020</span>
                 </div>
-                <h4 className="text-lg text-gray-300 mb-3">Instituto de Tecnologia Avançada</h4>
+                <h4 className="text-lg text-gray-300 mb-3">Instituto Facuminas</h4>
                 <p className="text-gray-400 leading-relaxed">
                   Especialização em Inteligência Artificial, Aprendizado de Máquina e Análise de Dados.
                   Pesquisa em algoritmos de otimização para sistemas distribuídos e processamento de big data.
@@ -336,9 +336,9 @@ function App() {
               <div className="glass-effect rounded-lg p-6 cyber-border">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-semibold text-neon-blue">Bacharelado em Ciência da Computação</h3>
-                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2014 - 2018</span>
+                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2009 - 2013</span>
                 </div>
-                <h4 className="text-lg text-gray-300 mb-3">Universidade Federal de Tecnologia</h4>
+                <h4 className="text-lg text-gray-300 mb-3">Universidade Gama Filho</h4>
                 <p className="text-gray-400 leading-relaxed">
                   Formação completa em Ciência da Computação com foco em desenvolvimento de software,
                   algoritmos, estruturas de dados, engenharia de software e análise estatística.
@@ -358,9 +358,9 @@ function App() {
               <h3 className="text-xl font-semibold mb-6 text-neon-blue">Tecnologias</h3>
               <div className="flex flex-wrap gap-3">
                 {[
-                  'JavaScript', 'TypeScript', 'React', 'Node.js', 'Next.js', 
-                  'Python', 'Power BI', 'GraphQL', 'MongoDB', 'PostgreSQL', 
-                  'Docker', 'AWS', 'Redux', 'TailwindCSS', 'Git'
+                  'JavaScript', 'TypeScript', "Java", 'React', 'Node.js', 'Next.js', 
+                  'Python', 'Power BI', "Looker", 'GraphQL', 'MongoDB', "IDE Eclipse", 'PostgreSQL', 
+                  'Docker', 'AWS', 'Cloud', 'TailwindCSS', 'Git'
                 ].map((skill) => (
                   <span key={skill} className="skill-tag bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md text-sm transition-all hover:bg-neon-blue/20">
                     {skill}
@@ -377,7 +377,7 @@ function App() {
                   'Análise de Dados', 'Visualização', 'Storytelling com Dados',
                   'Liderança Técnica', 'Comunicação', 'Resolução de problemas', 
                   'Gestão de tempo', 'Adaptabilidade', 'Trabalho em equipe',
-                  'Pensamento crítico', 'Mentoria', 'Aprendizado contínuo'
+                  'Pensamento crítico', 'Aprendizado contínuo'
                 ].map((skill) => (
                   <span key={skill} className="skill-tag bg-neon-purple/10 text-neon-purple px-3 py-1 rounded-md text-sm transition-all hover:bg-neon-purple/20">
                     {skill}
@@ -535,10 +535,10 @@ function App() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-white">CryptoVerse Analytics</h3>
+                <h3 className="text-xl font-semibold mb-2 text-white">VisionData Analytics</h3>
                 <p className="text-gray-400 mb-4 line-clamp-3">
-                  Plataforma de análise de criptomoedas com previsões de mercado baseadas em machine learning,
-                  visualizações avançadas de tendências e alertas personalizados.
+                  Plataforma de análise preditiva, combinando aprendizado de máquina e estatística
+                  vançada para transformar grandes volumes de dados em decisões estratégicas.                  
                 </p>
                 <div className="flex gap-2 mb-4">
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">React</span>
@@ -600,14 +600,14 @@ function App() {
               
               <div className="space-y-6">
                 {/* Link de Email */}
-                <a href="mailto:seraphim.marcos@example.com" className="flex items-center gap-4 text-gray-300 hover:text-neon-blue transition-colors group">
+                <a href="mailto:marcosseraphim@gmail.com" className="flex items-center gap-4 text-gray-300 hover:text-neon-blue transition-colors group">
                   <div className="bg-neon-blue/10 p-3 rounded-lg group-hover:bg-neon-blue/20 transition-colors">
                     <Mail size={20} className="text-neon-blue" />
                   </div>
-                  <span>seraphim.marcos@example.com</span>
+                  <span>marcosseraphim@gmail.com</span>
                 </a>
                 {/* Link de LinkedIn */}
-                <a href="https://linkedin.com/in/marcosseraphim" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-neon-blue transition-colors group">
+                <a href="https://www.linkedin.com/in/marcos-seraphim/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-neon-blue transition-colors group">
                   <div className="bg-neon-blue/10 p-3 rounded-lg group-hover:bg-neon-blue/20 transition-colors">
                     <Linkedin size={20} className="text-neon-blue" />
                   </div>
