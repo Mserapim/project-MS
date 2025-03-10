@@ -108,7 +108,7 @@ function App() {
             <div className="md:w-1/2">
               {/* Tag de desenvolvedor */}
               <div className="mb-2 inline-block">
-                <span className="text-neon-blue text-sm font-mono tracking-wider">// DESENVOLVEDOR FULL STACK & ANALISTA DE DADOS</span>
+                <span className="text-neon-blue text-sm font-mono tracking-wider">// ANALISTA DE DADOS & DESENVOLVEDOR FULL STACK</span>
               </div>
               {/* Nome com efeito de brilho */}
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
@@ -135,7 +135,7 @@ function App() {
                 <a href="https://github.com/marcosseraphim" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
                   <Github size={20} />
                 </a>
-                <a href="https://linkedin.com/in/marcosseraphim" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
+                <a href="https://www.linkedin.com/in/marcos-seraphim/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-neon-blue transition-colors">
                   <Linkedin size={20} />
                 </a>
                 <a href="mailto:seraphim.marcos@example.com" className="text-gray-400 hover:text-neon-blue transition-colors">
@@ -191,7 +191,7 @@ function App() {
                 estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.
               </p>
               <p className="text-gray-300 mb-4 leading-relaxed fade-in-section opacity-0 translate-y-10 transition-all duration-700 delay-100">
-                Minha jornada na área de tecnologia começou há 12 anos, e desde então tenho trabalhado 
+                Minha jornada na área de tecnologia começou há 13 anos, e desde então tenho trabalhado 
                 em diversos projetos que me permitiram desenvolver um conjunto diversificado de habilidades 
                 técnicas e analíticas. Especializo-me em arquiteturas modernas, análise de dados e visualizações interativas.
               </p>
@@ -263,7 +263,7 @@ function App() {
               <div className="glass-effect rounded-lg p-6 cyber-border">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-semibold text-neon-blue">Desenvolvedor Full Stack & Analista de Dados</h3>
-                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2020 - Presente</span>
+                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2025 - Presente</span>
                 </div>
                 <h4 className="text-lg text-gray-300 mb-3">CCT/ A SERVIÇO DA PETROBRAS S/A </h4>
                 <p className="text-gray-400 leading-relaxed">
@@ -277,8 +277,8 @@ function App() {
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Node.js</span>
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Python</span>
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Power BI</span>
-                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">MongoDB</span>
-                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">AWS</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Django</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Java</span>
                 </div>
               </div>
             </div>
@@ -289,7 +289,7 @@ function App() {
               <div className="glass-effect rounded-lg p-6 cyber-border">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-semibold text-neon-blue">Analista de Dados & Desenvolvedor Front-end</h3>
-                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2018 - 2020</span>
+                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2023 - 2024</span>
                 </div>
                 <h4 className="text-lg text-gray-300 mb-3">SOLUTIC/ A SERVIÇO DA PETROBRAS </h4>
                 <p className="text-gray-400 leading-relaxed">
@@ -302,7 +302,7 @@ function App() {
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">React</span>
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">TypeScript</span>
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Python</span>
-                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">D3.js</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">JavaScript</span>
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">SQL</span>
                 </div>
               </div>
@@ -360,7 +360,7 @@ function App() {
                 {[
                   'JavaScript', 'TypeScript', "Java", 'React', 'Node.js', 'Next.js', 
                   'Python', 'Power BI', "Looker", 'GraphQL', 'MongoDB', "IDE Eclipse", 'PostgreSQL', 
-                  'Docker', 'AWS', 'Cloud', 'TailwindCSS', 'Git'
+                  'Docker', 'AWS', 'Cloud', 'TailwindCSS', 'Git','Sql'
                 ].map((skill) => (
                   <span key={skill} className="skill-tag bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md text-sm transition-all hover:bg-neon-blue/20">
                     {skill}
@@ -439,7 +439,7 @@ function App() {
                   {/* Barra de Proficiência: UI/UX Design */}
                   <div>
                     <div className="flex justify-between mb-2">
-                      <span className="text-gray-300">UI/UX Design</span>
+                      <span className="text-gray-300">Power BI</span>
                       <span className="text-neon-blue">80%</span>
                     </div>
                     <div className="h-2 bg-gray-700 rounded-full">
