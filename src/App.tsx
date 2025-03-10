@@ -5,6 +5,34 @@ import { Github, Linkedin, Mail, FileText, User, Briefcase, GraduationCap, Code,
 import Header from './components/Header';
 import Section from './components/Section';
 import Footer from './components/Footer';
+// Importação de EmailJS para envio de e-mails no formulário
+import emailjs from "@emailjs/browser";
+
+
+// 📌 Definição do componente ContactForm
+const ContactForm = () => {
+  const form = useRef(); // Criando referência para o formulário
+
+  // Função para enviar e-mail
+  const sendEmail = (e) => {
+      e.preventDefault(); // Evita o reload da página
+
+      emailjs.sendForm(
+          "service_k8ebuit",  // Substitua pelo seu Service ID
+          "template_5sgr8vb",   // Substitua pelo seu Template ID
+          form.current,
+          "EOdF4daI57rxFzWky"        // Substitua pelo seu User ID
+      )
+      .then((result) => {
+          alert("Mensagem enviada com sucesso!");
+          form.current.reset(); // Limpa os campos do formulário
+      })
+      .catch((error) => {
+          alert("Erro ao enviar mensagem: " + error.text);
+      });
+  };
+
+
 
 function App() {
   // Referência para o canvas que será usado para o efeito Matrix
@@ -645,12 +673,14 @@ function App() {
                 </div>
                 {/* Campo: Email */}
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                  <label htmlFor="reply_to" className="block text-sm font-medium text-gray-300 mb-1">Email</label>
                   <input 
                     type="email" 
-                    id="email" 
+                    id="reply_to"
+                    name="reply_to"  // Alterado para ser reconhecido pelo EmailJS 
                     className="w-full px-4 py-2 bg-darker-bg border border-gray-700 rounded-md focus:ring-2 focus:ring-neon-blue focus:border-neon-blue text-white"
                     placeholder="seu.email@exemplo.com"
+                    required
                   />
                 </div>
                 {/* Campo: Mensagem */}
