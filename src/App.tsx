@@ -31,6 +31,16 @@ const ContactForm = () => {
           alert("Erro ao enviar mensagem: " + error.text);
       });
   };
+  return (
+    <form ref={form} onSubmit={sendEmail}>
+      <label>Email:</label>
+      <input type="email" name="reply_to" required />
+      <label>Mensagem:</label>
+      <textarea name="message" required />
+      <button type="submit">Enviar</button>
+    </form>
+  );
+}; // 🚀 AGORA O `ContactForm` ESTÁ CORRETAMENTE FECHADO! ✅
 
 
 
