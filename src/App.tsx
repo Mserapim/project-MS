@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 // Importando ícones do Lucide React para uso na interface
-import { Github, Linkedin, Mail, FileText, User, Briefcase, GraduationCap, Code, ExternalLink, ChevronDown, Cpu, Zap, Globe, Database, BarChart, PieChart } from 'lucide-react';
+import { Github, Linkedin, Mail, FileText, Phone, User, Briefcase, GraduationCap, Code, ExternalLink, ChevronDown, Cpu, Zap, Globe, Database, BarChart, PieChart } from 'lucide-react';
 // Importando componentes personalizados
 import Header from './components/Header';
 import Section from './components/Section';
@@ -659,6 +659,13 @@ function App() {
                     <Github size={20} className="text-neon-blue" />
                   </div>
                   <span>github.com/marcosseraphim</span>
+                </a>
+                {/* Link de Telefone */}
+                <a href="tel:+5521979612706" className="flex items-center gap-4 text-gray-300 hover:text-neon-blue transition-colors group">
+                  <div className="bg-neon-blue/10 p-3 rounded-lg group-hover:bg-neon-blue/20 transition-colors">
+                    <Phone size={20} className="text-neon-blue" />
+                  </div>
+                  <span>+55 (21) 97961-2706</span>
                 </a>
                 {/* Link para CV */}
                 <a href="/cv.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-300 hover:text-neon-blue transition-colors group">
