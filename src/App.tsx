@@ -342,6 +342,8 @@ function App() {
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Python</span>
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">JavaScript</span>
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">SQL</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Power BI</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Angular</span>
                 </div>
               </div>
             </div>
@@ -398,7 +400,7 @@ function App() {
                 {[
                   'JavaScript', 'TypeScript', "Java", 'React', 'Node.js', 'Next.js', 
                   'Python', 'Power BI', "Looker", 'GraphQL', 'MongoDB', "IDE Eclipse", 'PostgreSQL', 
-                  'Docker', 'AWS', 'Cloud', 'TailwindCSS', 'Git','Sql'
+                  'Docker', 'AWS', 'Cloud', 'TailwindCSS', 'Git','Sql','Angular'
                 ].map((skill) => (
                   <span key={skill} className="skill-tag bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md text-sm transition-all hover:bg-neon-blue/20">
                     {skill}
