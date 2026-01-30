@@ -300,8 +300,8 @@ function App() {
               <div className="timeline-dot"></div>
               <div className="glass-effect rounded-lg p-6 cyber-border">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-semibold text-neon-blue">Desenvolvedor Full Stack & Analista de Dados</h3>
-                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2025 - Presente</span>
+                  <h3 className="text-xl font-semibold text-neon-blue">Desenvolvedor Full Stack & Analista de Sistemas</h3>
+                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2025 - 2026</span>
                 </div>
                 <h4 className="text-lg text-gray-300 mb-3">CAPCO/ A SERVIÇO DA PETROBRAS S/A </h4>
                 <p className="text-gray-400 leading-relaxed">
@@ -328,7 +328,7 @@ function App() {
               <div className="glass-effect rounded-lg p-6 cyber-border">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-xl font-semibold text-neon-blue">Analista de Dados & Desenvolvedor Front-end</h3>
-                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2023 - 2024</span>
+                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2024 - 2025</span>
                 </div>
                 <h4 className="text-lg text-gray-300 mb-3">CCT/ A SERVIÇO DA PETROBRAS S/A </h4>
                 <p className="text-gray-400 leading-relaxed">
@@ -354,7 +354,7 @@ function App() {
               <div className="timeline-dot"></div>
               <div className="glass-effect rounded-lg p-6 cyber-border">
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-semibold text-neon-blue">Analista de Dados & Desenvolvedor Front-end</h3>
+                  <h3 className="text-xl font-semibold text-neon-blue">Analista de Sistemas</h3>
                   <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2023 - 2024</span>
                 </div>
                 <h4 className="text-lg text-gray-300 mb-3">SOLUTIC/ A SERVIÇO DA PETROBRAS </h4>
