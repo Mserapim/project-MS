@@ -427,7 +427,7 @@ function App() {
               <div className="flex flex-wrap gap-3">
                 {[
                   'JavaScript', 'TypeScript', "Java", 'React', 'Node.js', 'Next.js', 
-                  'Python', 'Power BI', "Looker", 'GraphQL', 'MongoDB', "IDE Eclipse", 'PostgreSQL', 
+                  'Python', 'Power BI', "Looker", 'JSON', 'MongoDB', "API REST", 'PostgreSQL', 
                   'Docker', 'AWS', 'Cloud', 'TailwindCSS', 'Git','Sql','Angular'
                 ].map((skill) => (
                   <span key={skill} className="skill-tag bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md text-sm transition-all hover:bg-neon-blue/20">
