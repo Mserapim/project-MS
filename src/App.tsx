@@ -229,7 +229,7 @@ function App() {
                 estou sempre buscando aprender novas tecnologias e aprimorar minhas habilidades.
               </p>
               <p className="text-gray-300 mb-4 leading-relaxed fade-in-section opacity-0 translate-y-10 transition-all duration-700 delay-100">
-                Minha jornada na área de tecnologia começou há 13 anos, e desde então tenho trabalhado 
+                Minha jornada na área de tecnologia começou há 14 anos, e desde então tenho trabalhado 
                 em diversos projetos que me permitiram desenvolver um conjunto diversificado de habilidades 
                 técnicas e analíticas. Especializo-me em arquiteturas modernas, análise de dados e visualizações interativas.
               </p>
@@ -303,25 +303,53 @@ function App() {
                   <h3 className="text-xl font-semibold text-neon-blue">Desenvolvedor Full Stack & Analista de Dados</h3>
                   <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2025 - Presente</span>
                 </div>
-                <h4 className="text-lg text-gray-300 mb-3">CCT/ A SERVIÇO DA PETROBRAS S/A </h4>
+                <h4 className="text-lg text-gray-300 mb-3">CAPCO/ A SERVIÇO DA PETROBRAS S/A </h4>
                 <p className="text-gray-400 leading-relaxed">
-                  Liderança no desenvolvimento de aplicações web de alta performance utilizando React, Node.js e MongoDB.
+                  Desenvolvimento de aplicações web utilizando React, Node.js e MongoDB, utilizando APIs, REST e JSON.
                   Implementação de análises de dados e dashboards com Java, Python e Power BI para tomada de decisões.
-                  Criação de modelos preditivos e ETL para processamento de grandes volumes de dados.
+                  Criação de modelos preditivos e ETL, versionamento com Git e práticas de DevOps com Docker e Podman.
                   Mentoria de desenvolvedores juniores e implementação de práticas de DevOps.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">React</span>
-                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Node.js</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Docker</span>
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Python</span>
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Power BI</span>
-                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Django</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Git</span>
                   <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Java</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">APIs</span>
                 </div>
               </div>
             </div>
 
             {/* Experiência 2 */}
+            <div className="timeline-item fade-in-section opacity-0 translate-y-10 transition-all duration-700 delay-100">
+              <div className="timeline-dot"></div>
+              <div className="glass-effect rounded-lg p-6 cyber-border">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="text-xl font-semibold text-neon-blue">Analista de Dados & Desenvolvedor Front-end</h3>
+                  <span className="text-sm bg-neon-blue/10 text-neon-blue px-3 py-1 rounded-md font-mono">2023 - 2024</span>
+                </div>
+                <h4 className="text-lg text-gray-300 mb-3">CCT/ A SERVIÇO DA PETROBRAS S/A </h4>
+                <p className="text-gray-400 leading-relaxed">
+                  Desenvolvimento de interfaces responsivas e acessíveis utilizando React e TypeScript.
+                  Análise de dados de usuários para otimização de experiência e conversão.
+                  Criação de dashboards interativos para visualização de métricas de negócio.
+                  Implementação de animações avançadas e visualizações de dados complexas.
+                </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">React</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">TypeScript</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Python</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">JavaScript</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">SQL</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Power BI</span>
+                  <span className="bg-neon-blue/10 text-neon-blue px-2 py-1 rounded text-xs">Angular</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Experiência 3 */}
             <div className="timeline-item fade-in-section opacity-0 translate-y-10 transition-all duration-700 delay-100">
               <div className="timeline-dot"></div>
               <div className="glass-effect rounded-lg p-6 cyber-border">
@@ -347,7 +375,7 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
+           </div>
         </Section>
 
         {/* Seção Formação Acadêmica */}
