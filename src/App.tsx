@@ -42,11 +42,179 @@ const ContactForm = () => {
   );
 }; // 🚀 AGORA O `ContactForm` ESTÁ CORRETAMENTE FECHADO! ✅
 
+const useFloatingIcon = (ref, size, speed, maxSpeed) => {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    let bounds = { w: window.innerWidth, h: window.innerHeight };
+    let x = Math.max(0, Math.random() * (bounds.w - size));
+    let y = Math.max(0, Math.random() * (bounds.h - size));
+    let vx = (Math.random() < 0.5 ? -1 : 1) * speed;
+    let vy = (Math.random() < 0.5 ? -1 : 1) * (speed * 0.8);
+    let lastTime = performance.now();
+    let frameId = 0;
+    let isDragging = false;
+    let pointerId = null;
+    let offsetX = 0;
+    let offsetY = 0;
+    let lastPointerX = 0;
+    let lastPointerY = 0;
+    let lastPointerTime = 0;
+    let dragVx = 0;
+    let dragVy = 0;
+
+    const normalize = (nx, ny) => {
+      const len = Math.hypot(nx, ny) || 1;
+      return { vx: nx / len, vy: ny / len };
+    };
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+    const updateTransform = () => {
+      el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    };
+
+    const randomizeVelocity = (hitVertical, hitHorizontal) => {
+      if (hitVertical) {
+        const dir = x <= 0 ? 1 : -1;
+        const r = Math.random() * 0.9 - 0.45;
+        const n = normalize(dir, r);
+        vx = n.vx * speed;
+        vy = n.vy * speed;
+      }
+      if (hitHorizontal) {
+        const dir = y <= 0 ? 1 : -1;
+        const r = Math.random() * 0.9 - 0.45;
+        const n = normalize(r, dir);
+        vx = n.vx * speed;
+        vy = n.vy * speed;
+      }
+    };
+
+    const animate = (time) => {
+      const dt = (time - lastTime) / 1000;
+      lastTime = time;
+
+      if (isDragging) {
+        updateTransform();
+        frameId = requestAnimationFrame(animate);
+        return;
+      }
+
+      const maxX = Math.max(0, bounds.w - size);
+      const maxY = Math.max(0, bounds.h - size);
+
+      x += vx * dt;
+      y += vy * dt;
+
+      let hitVertical = false;
+      let hitHorizontal = false;
+
+      if (x <= 0) {
+        x = 0;
+        hitVertical = true;
+      } else if (x >= maxX) {
+        x = maxX;
+        hitVertical = true;
+      }
+
+      if (y <= 0) {
+        y = 0;
+        hitHorizontal = true;
+      } else if (y >= maxY) {
+        y = maxY;
+        hitHorizontal = true;
+      }
+
+      if (hitVertical || hitHorizontal) {
+        randomizeVelocity(hitVertical, hitHorizontal);
+      }
+
+      updateTransform();
+      frameId = requestAnimationFrame(animate);
+    };
+
+    const onPointerDown = (event) => {
+      if (event.button !== undefined && event.button !== 0) return;
+      isDragging = true;
+      pointerId = event.pointerId;
+      el.setPointerCapture?.(pointerId);
+      const now = performance.now();
+      lastPointerTime = now;
+      lastPointerX = event.clientX;
+      lastPointerY = event.clientY;
+      dragVx = 0;
+      dragVy = 0;
+      offsetX = event.clientX - x;
+      offsetY = event.clientY - y;
+    };
+
+    const onPointerMove = (event) => {
+      if (!isDragging || (pointerId !== null && event.pointerId !== pointerId)) return;
+      const now = performance.now();
+      const dt = (now - lastPointerTime) / 1000;
+      const maxX = Math.max(0, bounds.w - size);
+      const maxY = Math.max(0, bounds.h - size);
+      x = clamp(event.clientX - offsetX, 0, maxX);
+      y = clamp(event.clientY - offsetY, 0, maxY);
+      if (dt > 0) {
+        dragVx = clamp((event.clientX - lastPointerX) / dt, -maxSpeed, maxSpeed);
+        dragVy = clamp((event.clientY - lastPointerY) / dt, -maxSpeed, maxSpeed);
+      }
+      lastPointerTime = now;
+      lastPointerX = event.clientX;
+      lastPointerY = event.clientY;
+      updateTransform();
+    };
+
+    const onPointerUp = (event) => {
+      if (!isDragging || (pointerId !== null && event.pointerId !== pointerId)) return;
+      isDragging = false;
+      el.releasePointerCapture?.(pointerId);
+      pointerId = null;
+      if (Math.hypot(dragVx, dragVy) > 20) {
+        vx = dragVx;
+        vy = dragVy;
+      }
+    };
+
+    const handleResize = () => {
+      bounds = { w: window.innerWidth, h: window.innerHeight };
+      const maxX = Math.max(0, bounds.w - size);
+      const maxY = Math.max(0, bounds.h - size);
+      x = Math.min(x, maxX);
+      y = Math.min(y, maxY);
+    };
+
+    updateTransform();
+    window.addEventListener('resize', handleResize);
+    el.addEventListener('pointerdown', onPointerDown);
+    window.addEventListener('pointermove', onPointerMove);
+    window.addEventListener('pointerup', onPointerUp);
+    window.addEventListener('pointercancel', onPointerUp);
+    frameId = requestAnimationFrame(animate);
+
+    return () => {
+      cancelAnimationFrame(frameId);
+      window.removeEventListener('resize', handleResize);
+      el.removeEventListener('pointerdown', onPointerDown);
+      window.removeEventListener('pointermove', onPointerMove);
+      window.removeEventListener('pointerup', onPointerUp);
+      window.removeEventListener('pointercancel', onPointerUp);
+    };
+  }, [ref, size, speed, maxSpeed]);
+};
+
 
 
 function App() {
   // Referência para o canvas que será usado para o efeito Matrix
   const matrixRef = useRef(null);
+  const pythonRef = useRef(null);
+  const javaRef = useRef(null);
+  const dockerRef = useRef(null);
+  const apiRef = useRef(null);
 
   useEffect(() => {
     // Efeito de chuva Matrix (números binários caindo)
@@ -125,18 +293,110 @@ function App() {
     };
   }, []);
 
+  useFloatingIcon(pythonRef, 64, 90, 320);
+  useFloatingIcon(javaRef, 64, 85, 300);
+  useFloatingIcon(dockerRef, 64, 80, 280);
+  useFloatingIcon(apiRef, 64, 88, 300);
+
   return (
     // Container principal com fundo escuro e texto claro
     <div className="min-h-screen bg-dark-bg text-gray-100 font-sans relative">
       {/* Canvas para o efeito Matrix */}
       <canvas ref={matrixRef} className="fixed top-0 left-0 w-full h-full opacity-30 z-0"></canvas>
+      <div
+        ref={pythonRef}
+        className="fixed top-0 left-0 z-[60] pointer-events-auto select-none opacity-90 cursor-grab active:cursor-grabbing"
+        style={{ touchAction: 'none' }}
+        aria-hidden="true"
+      >
+        <div className="w-16 h-16 flex items-center justify-center drop-shadow-lg">
+          <svg viewBox="0 0 256 255" className="w-16 h-16" aria-hidden="true">
+            <path
+              fill="#3776AB"
+              d="M126.92 0c-11.78.05-23.03 1.06-32.99 2.84-29.18 5.15-34.45 15.92-34.45 35.83v26.32h68.9v8.77H33.53c-20.03 0-37.59 12.04-43.02 34.91-6.26 26.22-6.53 42.58 0 70.31 4.88 20.67 16.53 34.91 36.56 34.91h23.65v-31.74c0-22.93 19.8-43.08 43.02-43.08h69.07c19.22 0 34.45-15.83 34.45-35.12V38.67c0-18.73-15.77-32.8-34.45-35.83C151.53.94 139.22-.11 126.92 0zM89.53 21.15c7.17 0 13.03 5.95 13.03 13.26 0 7.26-5.86 13.15-13.03 13.15-7.22 0-13.08-5.89-13.08-13.15 0-7.31 5.86-13.26 13.08-13.26z"
+            />
+            <path
+              fill="#FFD43B"
+              d="M205.08 74.34v30.83c0 23.89-20.25 44.02-43.02 44.02H93.35c-18.9 0-34.45 16.18-34.45 35.12v65.81c0 18.73 16.29 29.76 34.45 35.12 21.73 6.37 42.58 7.52 69.07 0 17.6-4.97 34.45-14.98 34.45-35.12v-26.32h-68.9v-8.77h103.35c20.03 0 27.51-13.99 34.45-34.91 7.17-21.55 6.87-42.27 0-70.31-4.95-20.18-14.4-34.91-34.45-34.91zM167.2 233.32c7.22 0 13.08 5.89 13.08 13.15 0 7.31-5.86 13.26-13.08 13.26-7.17 0-13.03-5.95-13.03-13.26 0-7.26 5.86-13.15 13.03-13.15z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div
+        ref={javaRef}
+        className="fixed top-0 left-0 z-[60] pointer-events-auto select-none opacity-90 cursor-grab active:cursor-grabbing"
+        style={{ touchAction: 'none' }}
+        aria-hidden="true"
+      >
+        <div className="w-16 h-16 flex items-center justify-center drop-shadow-lg">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg"
+            alt="Java"
+            className="w-16 h-16"
+            draggable={false}
+          />
+        </div>
+      </div>
+      <div
+        ref={dockerRef}
+        className="fixed top-0 left-0 z-[60] pointer-events-auto select-none opacity-90 cursor-grab active:cursor-grabbing"
+        style={{ touchAction: 'none' }}
+        aria-hidden="true"
+      >
+        <div className="w-16 h-16 flex items-center justify-center drop-shadow-lg">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+            alt="Docker"
+            className="w-16 h-16"
+            draggable={false}
+          />
+        </div>
+      </div>
+      <div
+        ref={apiRef}
+        className="fixed top-0 left-0 z-[60] pointer-events-auto select-none opacity-90 cursor-grab active:cursor-grabbing"
+        style={{ touchAction: 'none' }}
+        aria-hidden="true"
+      >
+        <div className="w-16 h-16 flex items-center justify-center drop-shadow-lg">
+          <svg viewBox="0 0 256 256" className="w-16 h-16" aria-hidden="true">
+            <defs>
+              <linearGradient id="apiCloud" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="#33B1FF" />
+                <stop offset="100%" stopColor="#6A5BFF" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M80 168c-26 0-48-18-48-44 0-23 18-42 41-44 8-22 29-38 54-38 30 0 56 22 60 50 24 2 43 22 43 47 0 26-22 49-48 49H80z"
+              fill="url(#apiCloud)"
+            />
+            <rect x="68" y="112" width="120" height="52" rx="18" fill="#ffffff" opacity="0.18" />
+            <text
+              x="128"
+              y="146"
+              textAnchor="middle"
+              fontSize="36"
+              fontFamily="Arial, sans-serif"
+              fontWeight="700"
+              fill="#ffffff"
+            >
+              API
+            </text>
+            <circle cx="64" cy="202" r="10" fill="#33B1FF" />
+            <circle cx="128" cy="216" r="10" fill="#6A5BFF" />
+            <circle cx="192" cy="202" r="10" fill="#33B1FF" />
+            <path d="M64 192v-16M128 206v-20M192 192v-16" stroke="#6A5BFF" strokeWidth="6" strokeLinecap="round" />
+            <path d="M64 176h128" stroke="#6A5BFF" strokeWidth="6" strokeLinecap="round" />
+          </svg>
+        </div>
+      </div>
       {/* Componente de cabeçalho */}
       <Header />
       
       {/* Conteúdo principal */}
       <main className="max-w-5xl mx-auto px-4 py-8 relative z-10">
         {/* Seção Hero (principal) */}
-        <section className="min-h-screen flex flex-col justify-center items-center relative py-20">
+        <section className="flex flex-col justify-center items-center relative pt-24 pb-12">
           {/* Gradiente de fundo */}
           <div className="hero-gradient absolute inset-0 z-0"></div>
           
@@ -146,7 +406,7 @@ function App() {
             <div className="md:w-1/2">
               {/* Tag de desenvolvedor */}
               <div className="mb-2 inline-block">
-                <span className="text-neon-blue text-sm font-mono tracking-wider">// DESENVOLVEDOR FULL STACK & ANALISTA DE DADOS</span>
+                <span className="text-neon-blue text-sm font-mono tracking-wider">// FULL STACK DEVELOPER (JAVA & PYTHON) | APIS & DATA ANALYTICS</span>
               </div>
               {/* Nome com efeito de brilho */}
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
@@ -219,7 +479,7 @@ function App() {
         </section>
 
         {/* Seção Sobre Mim */}
-        <Section id="about" title="Sobre Mim" icon={<User size={24} className="text-neon-blue" />}>
+        <Section id="about" title="Sobre Mim" icon={<User size={24} className="text-neon-blue" />} className="pt-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="col-span-2">
               {/* Parágrafos com efeito de fade-in ao rolar */}

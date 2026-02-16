@@ -5,11 +5,12 @@ interface SectionProps {
   title: string;
   icon?: ReactNode;
   children: ReactNode;
+  className?: string;
 }
 
-const Section: React.FC<SectionProps> = ({ id, title, icon, children }) => {
+const Section: React.FC<SectionProps> = ({ id, title, icon, children, className }) => {
   return (
-    <section id={id} className="mb-20 pt-16 scroll-mt-20">
+    <section id={id} className={`mb-20 pt-16 scroll-mt-20 ${className ?? ''}`}>
       <div className="flex items-center gap-3 mb-8">
         {icon && <span>{icon}</span>}
         <h2 className="text-2xl md:text-3xl font-bold text-white">{title}</h2>
