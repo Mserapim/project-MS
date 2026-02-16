@@ -27,7 +27,7 @@ const Footer = () => {
               <Code size={24} className="text-neon-blue" />
               <h2 className="text-2xl font-bold text-neon-blue glow-text">MarcosSeraphim<span className="text-white blinking-cursor">_</span></h2>
             </div>
-            <p className="text-gray-400">Desenvolvedor Full Stack & Analista de Dados</p>
+            <p className="text-gray-400">FULL STACK DEVELOPER (JAVA & PYTHON) | APIS & DATA ANALYTICS</p>
           </div>
           
           {/* Barra de pesquisa Google */}

@@ -310,16 +310,12 @@ function App() {
         aria-hidden="true"
       >
         <div className="w-16 h-16 flex items-center justify-center drop-shadow-lg">
-          <svg viewBox="0 0 256 255" className="w-16 h-16" aria-hidden="true">
-            <path
-              fill="#3776AB"
-              d="M126.92 0c-11.78.05-23.03 1.06-32.99 2.84-29.18 5.15-34.45 15.92-34.45 35.83v26.32h68.9v8.77H33.53c-20.03 0-37.59 12.04-43.02 34.91-6.26 26.22-6.53 42.58 0 70.31 4.88 20.67 16.53 34.91 36.56 34.91h23.65v-31.74c0-22.93 19.8-43.08 43.02-43.08h69.07c19.22 0 34.45-15.83 34.45-35.12V38.67c0-18.73-15.77-32.8-34.45-35.83C151.53.94 139.22-.11 126.92 0zM89.53 21.15c7.17 0 13.03 5.95 13.03 13.26 0 7.26-5.86 13.15-13.03 13.15-7.22 0-13.08-5.89-13.08-13.15 0-7.31 5.86-13.26 13.08-13.26z"
-            />
-            <path
-              fill="#FFD43B"
-              d="M205.08 74.34v30.83c0 23.89-20.25 44.02-43.02 44.02H93.35c-18.9 0-34.45 16.18-34.45 35.12v65.81c0 18.73 16.29 29.76 34.45 35.12 21.73 6.37 42.58 7.52 69.07 0 17.6-4.97 34.45-14.98 34.45-35.12v-26.32h-68.9v-8.77h103.35c20.03 0 27.51-13.99 34.45-34.91 7.17-21.55 6.87-42.27 0-70.31-4.95-20.18-14.4-34.91-34.45-34.91zM167.2 233.32c7.22 0 13.08 5.89 13.08 13.15 0 7.31-5.86 13.26-13.08 13.26-7.17 0-13.03-5.95-13.03-13.26 0-7.26 5.86-13.15 13.03-13.15z"
-            />
-          </svg>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+            alt="Python"
+            className="w-16 h-16"
+            draggable={false}
+          />
         </div>
       </div>
       <div
@@ -553,7 +549,13 @@ function App() {
         </Section>
 
         {/* Seção Experiência Profissional */}
-        <Section id="experience" title="Experiência Profissional" icon={<Briefcase size={24} className="text-neon-blue" />}>
+        <Section
+          id="experience"
+          title="Experiência Profissional"
+          icon={<Briefcase size={24} className="text-neon-blue" />}
+          collapsible
+          defaultOpen={false}
+        >
           <div className="space-y-12 pl-8">
             {/* Experiência 1 */}
             <div className="timeline-item fade-in-section opacity-0 translate-y-10 transition-all duration-700">
@@ -639,7 +641,13 @@ function App() {
         </Section>
 
         {/* Seção Formação Acadêmica */}
-        <Section id="education" title="Formação Acadêmica" icon={<GraduationCap size={24} className="text-neon-blue" />}>
+        <Section
+          id="education"
+          title="Formação Acadêmica"
+          icon={<GraduationCap size={24} className="text-neon-blue" />}
+          collapsible
+          defaultOpen={false}
+        >
           <div className="space-y-12 pl-8">
             {/* Formação 1 */}
             <div className="timeline-item fade-in-section opacity-0 translate-y-10 transition-all duration-700">
