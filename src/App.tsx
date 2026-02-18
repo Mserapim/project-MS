@@ -439,7 +439,8 @@ function App() {
             <div className="md:w-1/2">
               {/* Tag de desenvolvedor */}
               <div className="mb-2 inline-block">
-                <span className="text-neon-blue text-sm font-mono tracking-wider">// FULL STACK DEVELOPER (JAVA & PYTHON) | APIS & DATA ANALYTICS</span>
+                <Code size={0} className="text-neon-blue" />
+                <span className="text-lg font-bold text-neon-blue glow-text">FULL STACK DEVELOPER (JAVA & PYTHON) | APIS & DATA ANALYTICS</span>
               </div>
               {/* Nome com efeito de brilho */}
               <h1 className="text-5xl md:text-6xl font-bold mb-4 text-white">
