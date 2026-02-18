@@ -213,6 +213,8 @@ function App() {
   const matrixRef = useRef(null);
   const pythonRef = useRef(null);
   const javaRef = useRef(null);
+  const reactRef = useRef(null);
+  const angularRef = useRef(null);
   const dockerRef = useRef(null);
   const apiRef = useRef(null);
 
@@ -295,6 +297,8 @@ function App() {
 
   useFloatingIcon(pythonRef, 64, 90, 320);
   useFloatingIcon(javaRef, 64, 85, 300);
+  useFloatingIcon(reactRef, 64, 87, 300);
+  useFloatingIcon(angularRef, 64, 86, 300);
   useFloatingIcon(dockerRef, 64, 80, 280);
   useFloatingIcon(apiRef, 64, 88, 300);
 
@@ -324,13 +328,46 @@ function App() {
         style={{ touchAction: 'none' }}
         aria-hidden="true"
       >
-        <div className="w-16 h-16 flex items-center justify-center drop-shadow-lg">
+        <div className="w-16 h-16 flex flex-col items-center justify-center gap-1 drop-shadow-lg">
           <img
-            src="https://upload.wikimedia.org/wikipedia/en/3/30/Java_programming_language_logo.svg"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
             alt="Java"
-            className="w-16 h-16"
+            className="w-12 h-12"
             draggable={false}
           />
+          <span className="text-[10px] font-semibold tracking-wide text-[#F89820]">Java</span>
+        </div>
+      </div>
+      <div
+        ref={reactRef}
+        className="fixed top-0 left-0 z-[60] pointer-events-auto select-none opacity-90 cursor-grab active:cursor-grabbing"
+        style={{ touchAction: 'none' }}
+        aria-hidden="true"
+      >
+        <div className="w-16 h-16 flex flex-col items-center justify-center gap-1 drop-shadow-lg">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+            alt="React"
+            className="w-12 h-12"
+            draggable={false}
+          />
+          <span className="text-[10px] font-semibold tracking-wide text-[#61DAFB]">React</span>
+        </div>
+      </div>
+      <div
+        ref={angularRef}
+        className="fixed top-0 left-0 z-[60] pointer-events-auto select-none opacity-90 cursor-grab active:cursor-grabbing"
+        style={{ touchAction: 'none' }}
+        aria-hidden="true"
+      >
+        <div className="w-16 h-16 flex flex-col items-center justify-center gap-1 drop-shadow-lg">
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
+            alt="Angular"
+            className="w-12 h-12"
+            draggable={false}
+          />
+          <span className="text-[10px] font-semibold tracking-wide text-[#DD0031]">Angular</span>
         </div>
       </div>
       <div
@@ -475,9 +512,18 @@ function App() {
         </section>
 
         {/* Seção Sobre Mim */}
-        <Section id="about" title="Sobre Mim" icon={<User size={24} className="text-neon-blue" />} className="pt-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="col-span-2">
+        <Section
+          id="about"
+          title="Sobre Mim"
+          icon={<User size={24} className="text-neon-blue" />}
+          className="pt-6"
+          collapsible
+          defaultOpen
+          collapseContainer={false}
+        >
+          {(isOpen) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className={`col-span-2 ${isOpen ? '' : 'hidden'}`}>
               {/* Parágrafos com efeito de fade-in ao rolar */}
               <p className="text-gray-300 mb-4 leading-relaxed fade-in-section opacity-0 translate-y-10 transition-all duration-700">
                 Sou Marcos Seraphim, um desenvolvedor de software e analista de dados com paixão por criar soluções tecnológicas 
@@ -497,7 +543,7 @@ function App() {
             </div>
             
             {/* Card de áreas de atuação */}
-            <div className="glass-effect rounded-lg p-6 fade-in-section opacity-0 translate-y-10 transition-all duration-700 delay-300">
+            <div className={`glass-effect rounded-lg p-6 fade-in-section opacity-0 translate-y-10 transition-all duration-700 delay-300 ${isOpen ? 'md:col-span-1' : 'md:col-span-3'}`}>
               <h3 className="text-xl font-semibold mb-4 text-neon-blue">Áreas de Atuação</h3>
               <div className="space-y-4">
                 {/* Área: Desenvolvimento Web */}
@@ -545,7 +591,8 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          )}
         </Section>
 
         {/* Seção Experiência Profissional */}

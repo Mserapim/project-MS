@@ -5,10 +5,11 @@ interface SectionProps {
   id: string;
   title: string;
   icon?: ReactNode;
-  children: ReactNode;
+  children: ReactNode | ((isOpen: boolean) => ReactNode);
   className?: string;
   collapsible?: boolean;
   defaultOpen?: boolean;
+  collapseContainer?: boolean;
 }
 
 const Section: React.FC<SectionProps> = ({
@@ -19,6 +20,7 @@ const Section: React.FC<SectionProps> = ({
   className,
   collapsible,
   defaultOpen = true,
+  collapseContainer = true,
 }) => {
   const isCollapsible = Boolean(collapsible);
   const [isOpen, setIsOpen] = useState(defaultOpen);
@@ -36,6 +38,12 @@ const Section: React.FC<SectionProps> = ({
     if (!isCollapsible) return;
     setIsOpen((prev) => !prev);
   };
+
+  const renderedChildren = typeof children === 'function'
+    ? (children as (open: boolean) => ReactNode)(isOpen)
+    : children;
+
+  const isContainerHidden = isCollapsible && collapseContainer && !isOpen;
 
   return (
     <section id={id} className={`mb-20 pt-16 scroll-mt-20 ${className ?? ''}`}>
@@ -65,10 +73,10 @@ const Section: React.FC<SectionProps> = ({
       </div>
       <div
         id={contentId}
-        className={`pl-0 md:pl-8 ${isCollapsible && !isOpen ? 'hidden' : ''}`}
-        aria-hidden={isCollapsible && !isOpen}
+        className={`pl-0 md:pl-8 ${isContainerHidden ? 'hidden' : ''}`}
+        aria-hidden={isContainerHidden}
       >
-        {children}
+        {renderedChildren}
       </div>
     </section>
   );
